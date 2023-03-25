@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
+        <title>Tech-war: {% block title %}{% endblock %}</title>
+        <link rel="stylesheet" href="\static\style.css">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Racing+Sans+One">
+        <script src="\static\index.js"></script>
+    </head>
+    <body>
+        <img class="left" width="200"src="\static\metal-side-left.png">
+        <img class="right" width="200"src="\static\metal-side-right.png">
+        <div class="center" style="background-image: url('/static/top-back.png');">
+               <a href="/"><img class="logo"  width="300"src="\static\Logo1.png"></a>
+        </div>
+            {% if get_flashed_messages() %}
+                <div class="alert">
+                    <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span> 
+                    {{ get_flashed_messages() | join(" ") }}
+                </div>
+            {% endif %}
+        {% if session["user_id"] %}
+        <a href="/logout"><button class="logout" onmouseover="exit()" id="logout">Log out</button></a>
+        {% endif %}
+        {% block main %}{% endblock %}
+    </body>
+</html>

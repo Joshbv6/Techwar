@@ -1,0 +1,19 @@
+{% extends "index.html" %}
+
+{% block title %} Log-in{% endblock %}
+{% block main %}
+    <form action="/login" method="post">
+        <div class="container">
+            <label>Username or E-mail</label><p></p>
+            <input type="text" name="name"><p></p>
+            <label>Password</label><p></p>
+            <input type="password" name="password"><p class="p"></p>
+            <label><input type="submit" value="Log in"></label>
+            <div>
+                <p></p><label style="font-size: 17px; margin-left: 35%;">Don't have an account?</label>
+                <p><a href="/register" class="register">Register</a></p>
+            </div>
+            <div id="mech"><img src="/static/mech.png"></div>
+        </div>
+    </form>
+{% endblock %}

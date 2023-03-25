@@ -1,0 +1,12 @@
+{% extends "index.html" %}
+
+{% block title %} Error{% endblock %}
+{% block main %}
+    <div class="container" style="top:15%;">
+        <img alt="MECH" class="border img-fluid" src="/static/mech.png" style="padding-left:15px;">
+        <label style="text-align:center; position: inherit; padding-left: 25px; padding-top: 45px; padding-right: 80px;">{{ message }}</label>
+    </div>
+    <a href="/login"><button class="back_to_register"><strong>Back</strong></button></a>
+{% endblock %}
+
+    

@@ -1,0 +1,25 @@
+{% extends "index.html" %}
+
+{% block title %} Registration{% endblock %}
+{% block main %}
+    <form action="/register" method="post">
+        <div class="container" style="background-image: url(/static/metalregister.jpg); margin-bottom: -154px;">
+            <label>Username</label><p></p>
+            <input type="text" name="username" id="username" style="width:95%;"><p></p>
+            <label>E-mail</label><p></p>
+            <input type="email" name="email" style="width:95%;"  placeholder="You can use a false email. But I suggest using a real one. The web will email you. Check spam."><p></p>
+            <label>Password</label><p></p>
+            <input type="password" name="password" style="width:85%;" id="pass"><div style="display:inline;" onclick="showp()"><img src="/static/eye.jpg" style="display:inline-block;width:50px;margin-left:15px;margin-bottom:-13px;"></div>
+            <div onclick ="help()"><span id="help" style="display:block; margin-right:47%;margin-left:47%;margin-top: 15px; border: solid black 3px; text-align: center; background-color:#C0C0C0;">
+                ?</span></div><p></p>
+            <label>Confirm password</label><p></p>
+            <input type="password" name="confirm" style="width:85%;" id="confirm"><div style="display:inline;" onclick="showc()"><img src="/static/eye.jpg" style="display:inline-block;width:50px;margin-left:15px;margin-bottom:-13px;"></div>
+            <p class="p"></p>
+            <label><input type="submit" value="Register"></label>    
+    </form>
+            <div>
+                <p></p><label style="font-size: 17px; margin-left: 35%;">Already have an account?</label>
+                <p><a href="/login" class="register">Log in</a></p>
+            </div>
+        </div>
+{% endblock %}
